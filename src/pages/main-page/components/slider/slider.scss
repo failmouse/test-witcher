@@ -1,0 +1,140 @@
+@keyframes movement{
+    0%{
+      transform: translateX(0px);
+      top: calc(100% - 32px);
+    }
+    100%{
+      top: 24px;
+    }
+  }
+
+.swiper-scrollbar {
+    border-radius: 10px;
+    background: rgb(255 255 255 / 30%);
+    .swiper-horizontal > &,
+    &.swiper-scrollbar-horizontal {
+      position: absolute;
+      top: -32px;
+      z-index: 50;
+      height: 4px;
+      width: 100%;
+    }
+}
+
+.swiper-scrollbar-drag {
+    height: 100%;
+    position: relative;
+    background: #EC3F3F;
+    border-radius: 10px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  top: -96px;
+  width: 32px;
+  height: 32px;
+  z-index: 10;
+  cursor: pointer;
+  &.swiper-button-disabled {
+    cursor: auto;
+    pointer-events: none;
+  }
+}
+
+.swiper-button-prev {
+  &:after {
+    content: url(./images/left.png);
+  }
+  &.swiper-button-disabled{
+    &:after {
+     content: url(./images/left-disabled.png);
+    }
+  }
+  right: 56px;
+  left: auto;
+}
+
+.swiper-button-next {
+  &:after {
+    content: url(./images/right.png);
+  }
+  &.swiper-button-disabled{
+    &:after {
+     content: url(./images/right-disabled.png);
+    }
+  }
+  right: 0;
+  left: auto;
+}
+
+.swiper {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    margin-top: 56px;
+}
+
+.swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform,-webkit-transform;
+}
+
+.swiper-slide {
+    flex-shrink: 0;
+    width: 282px;
+    height: 400px;
+    position: relative;
+}
+
+.card{
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    cursor: pointer;
+    .name{
+        position: absolute;
+        bottom: 32px;
+        left: 24px;
+        transition: all 0.2s;
+    }
+    .text{
+        opacity: 0;
+        position: absolute;
+        bottom: 32px;
+        left: 24px;
+        right: 24px;
+    }
+    .mask { 
+        position: absolute; 
+        top: 0; 
+        left: 0; 
+        right: 0; 
+        bottom: 0; 
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%);
+        opacity: 0;
+        transition: 0.2s;
+    }
+    &:hover{
+        .mask{
+            opacity: 1;
+        }
+        .name{
+            transform: translateY(-280px);
+            
+        }
+        .text{
+            opacity: 1;
+        }
+    }
+}
+
+
+
+  

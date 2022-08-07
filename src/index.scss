@@ -1,0 +1,91 @@
+@import url('./components/font/stylesheet.css');
+html, body{
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+
+}
+
+body{
+    background-color: #181818;
+    margin: 0;
+    font-size: 16px;
+    line-height: 20px;
+    color: white;
+    font-family: 'Futura PT';
+        h1{
+            font-size: 56px;
+            line-height: 56px;
+            color: white;
+            font-family: 'Futura PT';
+            margin: unset;
+        }
+        h2{
+            font-size: 40px;
+            line-height: 48px;
+            color: white;
+            font-family: 'Futura PT';
+            margin: unset;
+        }
+        h3{
+            font-size: 32px;
+            line-height: 40px;
+            color: white;
+            font-family: 'Futura PT';
+            margin: unset;
+        }
+        h4{
+            font-size: 24px;
+            line-height: 32px;
+            color: white;
+            font-family: 'Futura PT';
+            margin: unset;
+        }
+}
+
+.container{
+    padding: 0 120px;
+}
+
+.link{
+    font-size: 14px;
+    line-height: 20px;
+    color: white;
+    font-family: 'Futura PT';
+    opacity: 0.7;
+    white-space: pre-line;
+    display: block;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: 0.2s;
+    &:hover{
+        opacity: 1;
+    }
+}
+
+.red-btn{
+    background: rgba(236, 63, 63, 0.15);
+    outline: 1px solid rgba(236, 63, 63, 0.8);
+    font-weight: 600;
+    line-height: 24px;
+    color: white;
+    text-decoration: none;
+    transition: 0.2s;
+    &:hover{
+        background: #FF1E1E;
+        box-shadow: 0px 2px 24px rgba(255, 30, 30, 0.5);
+    }
+}
+
+.lightred-btn{
+    background: #EC3F3F;
+    font-weight: 600;
+    line-height: 24px;
+    color: white;
+    text-decoration: none;
+    transition: 0.2s;
+    &:hover{
+        background: #FF1E1E;
+        box-shadow: 0px 2px 24px rgba(255, 30, 30, 0.5);
+    }
+}

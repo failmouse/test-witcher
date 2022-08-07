@@ -1,0 +1,12 @@
+header{
+    background-color: black;
+    padding: 20px 0;
+    .flexing{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .red-btn{
+        padding: 12px 32px;
+    }
+}

@@ -1,0 +1,14 @@
+.mapblock{
+    margin-top: 40px;
+    height: 540px;
+}
+
+ymaps[class$="map"] {
+    &:first-child:not(:last-child){
+        display: none;
+    }
+}
+
+.ymaps-2-1-79-ground-pane {
+    -webkit-filter: grayscale(1);
+}
