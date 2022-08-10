@@ -23,6 +23,10 @@
 
 .contacts{
     margin-left: 126px;
+    margin-top: 104px;
+    &.sended{
+        margin-top: unset;
+    }
     p{
         margin: 8px 0;
         opacity: 0.6;
@@ -36,6 +40,9 @@
 .form-wrapper{
     max-width: 486px;
     width: 100%;
+    .title-form{
+        margin-bottom: 48px;
+    }
     .lightred-btn{
         font-size: 16px;
         line-height: 24px;
@@ -308,5 +315,93 @@
     .lightred-btn{
         margin-top: 40px;
         display: inline-block;
+    }
+}
+
+@media (max-width: 1024px) {
+    .header-form{
+        padding: 13px 64px;
+        margin-bottom: 30px;
+    }
+    .contact-us-form{
+        margin-top: 36px;
+        margin-bottom: 56px;
+    }
+    .form-row-selector{
+        margin-bottom: 24px;
+    }
+    .form-wrapper{
+        max-width: 320px;
+        form{
+            max-width: 320px;
+        }
+        .form-row{
+            margin-bottom: 24px;
+        }
+        .form-row.two-input{
+            flex-direction: column;
+            gap: 24px;
+            .input-column:last-child{
+                margin-left: unset;
+            }
+        }
+        .lightred-btn{
+            width: 100%;
+            padding: 16px 42px;
+        }
+    }
+    .contacts{
+        margin-left: 53px;
+    }
+    .success-text {
+        .lightred-btn{
+            margin-top: 24px;
+            width: unset;
+        }
+        h4{
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+}
+
+
+@media (max-width: 600px) {
+    .header-form{
+        padding: 18px 16px;
+        margin-bottom: 16px;
+    }
+    .contact-us-form {
+        flex-direction: column;
+        margin-top: 16px;
+    }
+    .contacts{
+        margin-top: 40px;
+        margin-left: unset;
+        p{
+            margin: 4px 0;
+        }
+        h2, h4{
+            margin-bottom: 24px;
+        }
+    }
+    .success-text{
+        h1{
+            margin-bottom: 16px;
+        }
+        .lightred-btn{
+            margin-top: 32px;
+            display: block;
+            text-align: center;
+        }
+    }
+    .contacts.sended{
+        margin-top: 52px;
+    }
+    .form-wrapper{
+        max-width: 100%;
+        form{
+            max-width: 100%;
+        }
     }
 }

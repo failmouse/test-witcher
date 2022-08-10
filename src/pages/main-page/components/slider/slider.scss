@@ -136,5 +136,32 @@
 }
 
 
+@media (max-width: 1024px) {
+  .swiper-slide{
+    width: 256px;
+    height: 360px;
+  }
+  .card{
+    img{
+      width: 100%;
+    }
+    &:hover .name{
+      transform: translateY(-260px);
+    }
+  }
+
+}
+
+@media (max-width: 600px) {
+  .swiper-slide{
+    width: 216px;
+    height: 280px;
+  }
+  .card:hover .name{
+    transform: translateY(-190px);
+  }
+}
+
+
 
   

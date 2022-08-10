@@ -10,3 +10,23 @@ header{
         padding: 12px 32px;
     }
 }
+
+@media (max-width: 1024px) {
+    header{
+        padding: 12px 0;
+    }
+}
+
+@media (max-width: 600px) {
+    header{
+        padding: 22px 0;
+        img{
+            height: 36px;
+        }
+        .red-btn{
+            padding: 12px 25.5px;
+            font-weight: unset;  
+            white-space: nowrap;
+        }
+    }
+}

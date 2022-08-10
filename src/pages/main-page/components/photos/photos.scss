@@ -53,3 +53,44 @@
     }
 }
 
+@media (max-width: 1024px){
+    .photo-block{
+        margin-top: 24px;
+        .side:last-child{
+            margin-left: 16px;
+            grid-gap: 16px;
+        }
+    }
+    .morephoto-block{
+        grid-gap: 16px;
+        margin-top: 16px;
+    }
+}
+
+@media (max-width: 600px){
+    .photo-title{
+        margin-top: 64px;
+    }
+    .photo-block{
+        flex-direction: column;
+        img{
+            height: 212px;
+        }
+        .side{
+            width: 100%;
+            &:last-child{
+                margin-top: 11px;
+                margin-left: unset;
+                grid-gap: 16px;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr;
+            }
+        }
+    }
+    .morephoto-block{
+        grid-template-columns: 1fr;
+        img{
+            height: 212px;
+        }
+    }
+}

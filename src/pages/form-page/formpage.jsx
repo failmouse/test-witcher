@@ -54,73 +54,75 @@ export default function FormPage() {
                 <a href="/"><img src={Logo}/></a>
             </header>
             <section className="container">
-                <h1>Оставьте заявку</h1>
                 <div className="contact-us-form">
                     <div className="form-wrapper">
                         {formSended!="yes"? 
-                        <form onSubmit={handleSubmit(onSubmit)}>
-                            <div className="form-row-selector">
-                                <div className='citySelect'>
-                                    <input onClick={() => 
-                                    {setCityExpanded(!CityExpanded); settriggered("yes");}} className={ CityExpanded ? "expanded" : "collapsed" }
-                                    style={{backgroundColor: errors.City && "rgba(236, 63, 63, 0.2)"}} type="text" readOnly
-                                    {...register("City", { required: true, validate: (value) => value !== "Выберете город" })} />
-                                    <i className={ CityExpanded ? "expanded" : "collapsed" } ><img src={ArrowIco}/></i>
-                                    <ul className={
-                                        triggered=="yes"? CityExpanded? "expanded" : "collapsed" : ""
-                                    } triggered={triggered} style={{backgroundColor: errors.City && "rgba(236, 63, 63, 0.2)"}}>
-                                        {cityList.map((i, index) =>
-                                            <li key={index} onClick={() => {handleCityChange(cityList[index]); setCityExpanded(!CityExpanded);}}>
-                                                {cityList[index]}
-                                            </li>
-                                        )}
-                                    </ul>
-                                    {errors.City && errors.City.type === "validate" && (<span className="error">Поле не заполненно</span>)}
+                        <>
+                            <h1 className='title-form'>Оставьте заявку</h1>
+                            <form onSubmit={handleSubmit(onSubmit)}>
+                                <div className="form-row-selector">
+                                    <div className='citySelect'>
+                                        <input onClick={() => 
+                                        {setCityExpanded(!CityExpanded); settriggered("yes");}} className={ CityExpanded ? "expanded" : "collapsed" }
+                                        style={{backgroundColor: errors.City && "rgba(236, 63, 63, 0.2)"}} type="text" readOnly
+                                        {...register("City", { required: true, validate: (value) => value !== "Выберете город" })} />
+                                        <i className={ CityExpanded ? "expanded" : "collapsed" } ><img src={ArrowIco}/></i>
+                                        <ul className={
+                                            triggered=="yes"? CityExpanded? "expanded" : "collapsed" : ""
+                                        } triggered={triggered} style={{backgroundColor: errors.City && "rgba(236, 63, 63, 0.2)"}}>
+                                            {cityList.map((i, index) =>
+                                                <li key={index} onClick={() => {handleCityChange(cityList[index]); setCityExpanded(!CityExpanded);}}>
+                                                    {cityList[index]}
+                                                </li>
+                                            )}
+                                        </ul>
+                                        {errors.City && errors.City.type === "validate" && (<span className="error">Поле не заполненно</span>)}
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="form-row">
-                                <input placeholder="Name"
-                                    style={{backgroundColor: errors.Name && "rgba(236, 63, 63, 0.2)"}} type="text"
-                                    {...register("Name", { required: true, minLength: 3, maxLength: 20, pattern: /[A-Za-zА-Яа-я]/i })} />
-                                <span className="floating-label">Имя</span>
-                                {errors.Name && errors.Name.type === "required" && (<span className="error">Поле не заполненно</span>)}
-                            </div>
-                            <div className="form-row two-input">
-                                <div className="input-column">
-                                    <input placeholder="Email" style={{backgroundColor: errors.Email && "rgba(236, 63, 63, 0.2)"}} type="email"
-                                    {...register("Email", { required: true, pattern: /^\S+@\S+$/i })} />
-                                    <span className="floating-label">Email</span>
-                                    {errors.Email && errors.Email.type === "required" && (<span className="error">Поле не заполненно</span>)}
+                                <div className="form-row">
+                                    <input placeholder="Name"
+                                        style={{backgroundColor: errors.Name && "rgba(236, 63, 63, 0.2)"}} type="text"
+                                        {...register("Name", { required: true, minLength: 3, maxLength: 20, pattern: /[A-Za-zА-Яа-я]/i })} />
+                                    <span className="floating-label">Имя</span>
+                                    {errors.Name && errors.Name.type === "required" && (<span className="error">Поле не заполненно</span>)}
                                 </div>
-                                <div className="input-column">
-                                    <input placeholder="Телефон" style={{backgroundColor: errors.Telephone && "rgba(236, 63, 63, 0.2)"}} type="tel"
-                                    {...register("Telephone", { required: true, minLength: 11, maxLength: 12, pattern: /[+1-9]/i })} />
-                                    <span className="floating-label">{TelephonePlaceholder}</span>
-                                    {errors.Telephone && errors.Telephone.type === "required" && (<span className="error">Поле не заполненно</span>)} 
+                                <div className="form-row two-input">
+                                    <div className="input-column">
+                                        <input placeholder="Email" style={{backgroundColor: errors.Email && "rgba(236, 63, 63, 0.2)"}} type="email"
+                                        {...register("Email", { required: true, pattern: /^\S+@\S+$/i })} />
+                                        <span className="floating-label">Email</span>
+                                        {errors.Email && errors.Email.type === "required" && (<span className="error">Поле не заполненно</span>)}
+                                    </div>
+                                    <div className="input-column">
+                                        <input placeholder="Телефон" style={{backgroundColor: errors.Telephone && "rgba(236, 63, 63, 0.2)"}} type="tel"
+                                        {...register("Telephone", { required: true, minLength: 11, maxLength: 12, pattern: /[+1-9]/i })} />
+                                        <span className="floating-label">{TelephonePlaceholder}</span>
+                                        {errors.Telephone && errors.Telephone.type === "required" && (<span className="error">Поле не заполненно</span>)} 
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="form-row">
-                                <textarea placeholder="Оставьте пометку к заказу" style={{backgroundColor: errors.Text && "rgba(236, 63, 63, 0.2)"}}
-                                    {...register("Text", { required: true })} /> 
-                                    {errors.Text && errors.Text.type === "required" && (<span className="error">Поле не заполненно</span>)}
-                            </div>
-                            <div className="form-row-file">
-                                <div className='file-handler'>
-                                    <input accept="image/*" type="file" id="picture" {...register("picture", { onChange: (e) => {if (getValues("picture")[0]!=undefined) {setfileName(getValues("picture")[0].name)} else {setfileName("Прикрепите файл")}}, required: true })} />
-                                    <label className={errors.picture && "error"} htmlFor="picture">{fileName}</label>
-                                    <i><img src={ClipIco}/></i>
+                                <div className="form-row">
+                                    <textarea placeholder="Оставьте пометку к заказу" style={{backgroundColor: errors.Text && "rgba(236, 63, 63, 0.2)"}}
+                                        {...register("Text", { required: true })} /> 
+                                        {errors.Text && errors.Text.type === "required" && (<span className="error">Поле не заполненно</span>)}
                                 </div>
-                                {errors.picture && errors.picture.type === "required" && (<span className="error">Поле не заполненно</span>)}
-                            </div>
-                            <div className='form-row-checkbox'>
-                                <div className='checkbox-hadler'>        
-                                    <input className='custom-checkbox' type="checkbox" id="persData" {...register("persData", { required: true })} />
-                                    <label className={errors.persData && "error"} htmlFor="persData">Даю согласие на обработку своих персональных данных</label>
+                                <div className="form-row-file">
+                                    <div className='file-handler'>
+                                        <input accept="image/*" type="file" id="picture" {...register("picture", { onChange: (e) => {if (getValues("picture")[0]!=undefined) {setfileName(getValues("picture")[0].name)} else {setfileName("Прикрепите файл")}}, required: true })} />
+                                        <label className={errors.picture && "error"} htmlFor="picture">{fileName}</label>
+                                        <i><img src={ClipIco}/></i>
+                                    </div>
+                                    {errors.picture && errors.picture.type === "required" && (<span className="error">Поле не заполненно</span>)}
                                 </div>
-                                {errors.persData && errors.persData.type === "required" && (<span className="error">Поле не заполненно</span>)}
-                            </div>
-                            <input className='lightred-btn' value="Оставить заявку"  type="submit" />
-                        </form>
+                                <div className='form-row-checkbox'>
+                                    <div className='checkbox-hadler'>        
+                                        <input className='custom-checkbox' type="checkbox" id="persData" {...register("persData", { required: true })} />
+                                        <label className={errors.persData && "error"} htmlFor="persData">Даю согласие на обработку своих персональных данных</label>
+                                    </div>
+                                    {errors.persData && errors.persData.type === "required" && (<span className="error">Поле не заполненно</span>)}
+                                </div>
+                                <input className='lightred-btn' value="Оставить заявку"  type="submit" />
+                            </form>
+                        </>
                         :
                         <div className='success-text'>
                             <h1>Заявка отправлена!</h1>
@@ -128,7 +130,7 @@ export default function FormPage() {
                             <a className="lightred-btn" href="/">Вернуться на главную</a>
                         </div>}
                     </div>
-                    <div className="contacts">
+                    <div className={formSended!="yes"? "contacts" : "contacts sended"}>
                         <p>Наша горячая линия</p>
                         <h2>8 800 38 23 112</h2>
                         <p>Главный офис</p>

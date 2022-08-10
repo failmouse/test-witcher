@@ -12,3 +12,18 @@ ymaps[class$="map"] {
 .ymaps-2-1-79-ground-pane {
     -webkit-filter: grayscale(1);
 }
+
+@media (max-width: 1024px) { 
+    .mapblock{
+        margin-top: 24px;
+        height: 400px; 
+    }
+}
+
+
+@media (max-width: 600px) { 
+    .mapblock{
+        margin-top: 24px;
+        height: 400px; 
+    }
+}

@@ -17,12 +17,12 @@ export default function MainPage() {
             <Slider />
             <section>
                 <div className='container mblock'>
-                    <h2>Кадры со съемок</h2>
+                    <h2 className="photo-title">Кадры со съемок</h2>
                     <Photos/>
                 </div>
             </section>
             <section>
-                <div className='container mblock'>
+                <div className='container mblock map'>
                     <h2>Магазины мерча ведьмака</h2>
                     <Map/>
                 </div>

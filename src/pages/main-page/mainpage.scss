@@ -20,3 +20,55 @@
 .mblock{
     margin-top: 72px;
 }
+
+@media (max-width: 1024px) {
+    .banner{
+        background-size: 150%;
+        background-position-y: 15%;
+        background-position-x: 90%;
+        padding-top: 60px;
+        padding-bottom: 76px;
+        .container{
+            max-width: 370px;
+            p{
+                margin-top: 16px;
+                margin-bottom: 32px;
+            }
+        }
+    }
+    .mblock{
+        margin-top: 64px;
+    }
+    .container.map{
+        padding: 0;
+        h2{
+            padding: 0 64px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .banner{
+        background-size: 350%;
+        background-position-x: 77%;
+        background-position-y: 30%;
+        padding-top: 56px;
+        padding-bottom: 73px;
+        .container{
+            max-width: 280px;
+            p{
+                margin-top: 6px;
+            }
+        }
+    }
+    .mblock{
+        margin-top: 16px;
+    }
+    .container.map{
+        padding: 0;
+        h2{
+            padding: 0 16px;
+            margin-top: 48px;
+        }
+    }
+}

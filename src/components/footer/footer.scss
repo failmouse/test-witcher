@@ -71,3 +71,53 @@ footer{
         cursor: pointer;
     }
 }
+
+@media (max-width: 1024px) { 
+    footer{
+        margin-top: unset;
+    }
+    .popup-overlay{
+        padding: 0 24px;
+    }
+    .popup-content{
+        h2{
+            margin-bottom: 24px;
+        }
+        P{
+            margin-bottom: 32px;
+        }
+    }
+    .modal{
+        padding: 48px 40px;
+        .close{
+            width: 18px;
+            height: 18px;
+            right: 35px;
+            top: 35px;
+        }
+    }
+}
+
+@media (max-width: 600px) { 
+    footer{
+        padding-top: 28px;
+        padding-bottom: 70px;
+        position: relative;
+        .link{
+            position: absolute;
+            bottom: 24px;
+            white-space: inherit;
+            opacity: 0.4;
+        }
+    }
+    .popup-overlay, .popup-content{
+        padding: 0;
+    }
+    .modal{
+        padding: 24px 16px;
+        .close{
+            right: 19px;
+            top: 27px;
+        }
+    }
+}
