@@ -46,7 +46,7 @@ export default function Header() {
     return (
         <footer>
             <div className='container flexing'>
-                <img src={Logo} alt="logo" />
+                <a href='/'><img src={Logo} alt="logo" /></a>
                 <PopUp />
                 <div className='social-links'>
                     <a href="#"><InstIco /></a>

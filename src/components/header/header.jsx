@@ -6,8 +6,8 @@ export default function Header() {
     return(
         <header>
             <div className='container flexing'>
-                <img src={Logo} alt="logo" />
-                <a href="#" className='red-btn'>
+                <a href='/'> <img src={Logo} alt="logo" /> </a> 
+                <a href="/request" className='red-btn'>
                     Подключить подписку
                 </a>
             </div>
