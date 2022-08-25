@@ -56,7 +56,7 @@ export default function FormPage() {
             <section className="container">
                 <div className="contact-us-form">
                     <div className="form-wrapper">
-                        {formSended!="yes"? 
+                        {formSended!=="yes"? 
                         <>
                             <h1 className='title-form'>Оставьте заявку</h1>
                             <form onSubmit={handleSubmit(onSubmit)}>
@@ -107,7 +107,7 @@ export default function FormPage() {
                                 </div>
                                 <div className="form-row-file">
                                     <div className='file-handler'>
-                                        <input accept="image/*" type="file" id="picture" {...register("picture", { onChange: (e) => {if (getValues("picture")[0]!=undefined) {setfileName(getValues("picture")[0].name)} else {setfileName("Прикрепите файл")}}, required: true })} />
+                                        <input accept="image/*" type="file" id="picture" {...register("picture", { onChange: (e) => {if (getValues("picture")[0]!==undefined) {setfileName(getValues("picture")[0].name)} else {setfileName("Прикрепите файл")}}, required: true })} />
                                         <label className={errors.picture && "error"} htmlFor="picture">{fileName}</label>
                                         <i><img src={ClipIco}/></i>
                                     </div>
@@ -130,7 +130,7 @@ export default function FormPage() {
                             <a className="lightred-btn" href="/">Вернуться на главную</a>
                         </div>}
                     </div>
-                    <div className={formSended!="yes"? "contacts" : "contacts sended"}>
+                    <div className={formSended!=="yes"? "contacts" : "contacts sended"}>
                         <p>Наша горячая линия</p>
                         <h2>8 800 38 23 112</h2>
                         <p>Главный офис</p>
